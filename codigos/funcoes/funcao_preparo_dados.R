@@ -47,12 +47,12 @@ preparo_dados_sensores <- function(leitura){
   }
   
   return(
-    list(
-      funcionamento_completo,
-      funcionamento_sensor1,
-      valor_sensor1,
-      funcionamento_sensor2,
-      valor_sensor2
+    data.frame(
+      funcionamento_completo = funcionamento_completo,
+      funcionamento_sensor1 = funcionamento_sensor1,
+      valor_sensor1 = valor_sensor1,
+      funcionamento_sensor2 = funcionamento_sensor2,
+      valor_sensor2 = valor_sensor2
     )
   )
 

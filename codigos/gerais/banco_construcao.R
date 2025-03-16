@@ -1,5 +1,7 @@
 # codigo para gerar o banco de dados
 # 20250303
+# 
+### banco 1 - feito em 03/03/2025 ########################################################################
 
 install.packages("duckdb")
 
@@ -24,6 +26,42 @@ dbExecute(con, "CREATE TABLE IF NOT EXISTS dados_sensores (
 ##dbGetQuery(con, "SELECT * FROM dados_sensores") %>% as.data.frame()
 
 dbDisconnect(con, shutdown=TRUE)
+
+
+### banco 1 - feito em 03/03/2025 ########################################################################
+
+
+### banco 2 - feito em 16/03/2025 ########################################################################
+
+###
+# Conectar ao DuckDB
+con <- dbConnect(duckdb::duckdb(), "dados/dados_arduino.duckdb")
+
+dbExecute(con, "CREATE TABLE IF NOT EXISTS dados_sensores2 (
+    funcionamento_completo INTEGER,
+    funcionamento_sensor1 INTEGER,
+    valor_sensor1 INTEGER,
+    funcionamento_sensor2 INTEGER,
+    valor_sensor2 INTEGER,
+    timestamp TIMESTAMP
+)")
+
+##dbExecute(con, "DROP TABLE dados_sensores")
+##dbGetQuery(con, "SELECT * FROM dados_sensores") %>% as.data.frame()
+
+dbDisconnect(con, shutdown=TRUE)
+
+### banco 2 - feito em 16/03/2025 ########################################################################
+
+
+
+
+
+
+
+
+
+
 
 
 # 
